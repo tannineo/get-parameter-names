@@ -119,4 +119,16 @@ describe('function tests', function () {
 
     expect(arg(f)).to.deep.equal(['a', 'b']);
   })
+
+  it('supports generator funcion', function(){
+    var f = function* (a, b) { return a+b; };
+
+    expect(arg(f)).to.deep.equal(['a', 'b']);
+  })
+
+  it('supports async funcion', function(){
+    var f = async function (a, b) { return a+b; };
+
+    expect(arg(f)).to.deep.equal(['a', 'b']);
+  })
 });
